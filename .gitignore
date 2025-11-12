@@ -1,0 +1,85 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+wheelhouse/
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.coverage
+.coverage.*
+.tox/
+.nox/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# macOS
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Generated images/animation outputs
+*.png
+*.gif
+*.mp4
+
+# Misc
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Pixi lock (if present)
+pixi.lock
+
+# Ignore coverage reports and html builds
+htmlcov/
+
+# local config
+local_settings.py
+
+# Ignore compiled cython files
+*.c
+*.cpp
+
+# Keep node_modules out if any front-end example exists
+node_modules/
+
+# Data & results (if you create a results/ or output/ folder)
+results/
+output/
+
+# Ignore pixi virtual environment folder
+.pixi/
+
+# End of .gitignore
