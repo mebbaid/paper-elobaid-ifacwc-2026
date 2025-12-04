@@ -12,37 +12,26 @@ numpy = "*"
 matplotlib = "*"
 scipy = "*"
 
+cxx-compiler = "*"
+cmake = "*"
+make = "*"
+
+mujoco = "*"
+glfw = "*"
+mesa-libgl-devel-cos7-x86_64 = "*"
+libglvnd-glx-cos7-x86_64 = "*"
+xorg-libx11 = "*"
+xorg-libxext = "*"
+
+
+
 [tasks]
-# Run the example demonstrating N-gon finding on various curves
-finder-example = "python formation-finder-example.py"
+## cpp
+cpp-build = "cmake -S code/cpp -B code/cpp/build && cmake --build code/cpp/build"
+crazyflie-example = { cmd = "code/cpp/build/crazyflie_sim", depends-on = ["cpp-build"] }
 
-# Run multi-agent formation control simulation with animation
-simulation-example = "python multi_agent_simulation.py"
+## python
+finder-example = "python code/python/formation-finder-example.py"
+simulation-example = "python code/python/multi_agent_simulation.py"
 
-# Run individual examples
-example-triangle = "python -c 'from curve import Curve; from rigid_formation_finder import RigidFormationFinder; import numpy as np; curve = Curve(lambda t: (2*np.cos(t) + np.cos(2*t), 2*np.sin(t) - np.sin(2*t))); finder = RigidFormationFinder(curve, 3); result = finder.find_ngon(); print(f\"Triangle found: {result[0] is not None}\")'"
 
-example-square = "python -c 'from curve import Curve; from rigid_formation_finder import RigidFormationFinder; import numpy as np; curve = Curve(lambda t: (2*np.cos(t) + np.cos(2*t), 2*np.sin(t) - np.sin(2*t))); finder = RigidFormationFinder(curve, 4); result = finder.find_ngon(); print(f\"Square found: {result[0] is not None}\")'"
-
-example-pentagon = "python -c 'from curve import Curve; from rigid_formation_finder import RigidFormationFinder; import numpy as np; curve = Curve(lambda t: (2*np.cos(t) + np.cos(2*t), 2*np.sin(t) - np.sin(2*t))); finder = RigidFormationFinder(curve, 5); result = finder.find_ngon(); print(f\"Pentagon found: {result[0] is not None}\")'"
-
-# Testing
-test = "python -m pytest tests/ -v"
-
-# Code quality
-lint = "python -m flake8 *.py"
-format = "python -m black *.py"
-
-[feature.dev.dependencies]
-pytest = "*"
-black = "*"
-flake8 = "*"
-ipython = "*"
-jupyter = "*"
-
-[feature.dev.tasks]
-notebook = "jupyter notebook"
-ipython = "ipython"
-
-[environments]
-dev = ["dev"]

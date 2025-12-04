@@ -49,8 +49,8 @@ ENV/
 *.sqlite3
 
 # Generated images/animation outputs
-*.png
-*.gif
+# *.png
+# *.gif
 *.mp4
 
 # Misc
