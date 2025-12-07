@@ -3,7 +3,7 @@
 This repository contains the reference implementation for the paper **"On the Stabilization of Rigid Formations on Regular Curves"**. 
 
 It provides a unified control framework that enables multi-agent systems to:
-1.  Find inscribed rigid polygon formations on general planar curves (including those with cusps and self-intersections) via a randomized multi-start optimization.
+1.  Find inscribed rigid polygon formations centered on a target on general planar curves (including those with cusps and self-intersections) via a randomized multi-start optimization.
 2.  Control agents to sweep the path and smoothly transition to the desired formation vertices.
 3.  Ensure inter-agent collision avoidance and curve "practical invariance" throughout the mission.
 

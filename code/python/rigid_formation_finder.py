@@ -255,7 +255,7 @@ class RigidFormationFinder:
         for offset in [0.1, 0.3, 0.6]:
             guesses.append(np.mod(base_uniform + offset, 2*np.pi))
         
-        rng = np.random.default_rng(12345)
+        rng = np.random.default_rng(42)
         for _ in range(num_random_inits):
             arr = np.sort(rng.random(self.N) * 2 * np.pi)
             guesses.append(arr)
