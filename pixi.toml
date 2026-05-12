@@ -26,10 +26,6 @@ xorg-libxext = "*"
 
 
 [tasks]
-## cpp
-cpp-build = "cmake -S code/cpp -B code/cpp/build && cmake --build code/cpp/build"
-crazyflie-example = { cmd = "code/cpp/build/crazyflie_sim", depends-on = ["cpp-build"] }
-
 ## python
 finder-example = "python code/python/formation-finder-example.py"
 simulation-example = "python code/python/multi_agent_simulation.py"
